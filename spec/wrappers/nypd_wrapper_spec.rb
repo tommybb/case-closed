@@ -14,27 +14,30 @@ RSpec.describe NypdWrapper do
       result = NypdWrapper.cases
 
       expect(result).to match([
-        {
+        have_attributes(
           name: 'Joker escape',
-          case_uid: '1002829',
-          handler_email: 'james_gordon@gcpd.com',
+          uid: 'nypd_1002829',
+          officer_email: 'james_gordon@gcpd.com',
+          officer_name: 'James Gordon',
           description: 'Joker just broke out of prison',
-          priority: 'low'
-        },
-        {
+          important: false
+        ),
+        have_attributes(
           name: 'Joker escape',
-          case_uid: '1002830',
-          handler_email: 'james_gordon@gcpd.com',
+          uid: 'nypd_1002830',
+          officer_email: 'james_gordon@gcpd.com',
+          officer_name: 'James Gordon',
           description: 'Joker just broke out of prison',
-          priority: 'medium'
-        },
-        {
+          important: false
+        ),
+        have_attributes(
           name: 'Strange does something strange',
-          case_uid: '1009199',
-          handler_email: 'carlos_alvarez@gcpd.com',
+          uid: 'nypd_1009199',
+          officer_email: 'carlos_alvarez@gcpd.com',
+          officer_name: 'Carlos Alvarez',
           description: 'Hugo Strange suspected of strange experiments on sheeps',
-          priority: 'high'
-        }
+          important: true
+        )
       ])
     end
   end

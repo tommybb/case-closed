@@ -4,27 +4,30 @@ RSpec.describe ImportNypdCases do
       create(:hero)
       allow(NypdWrapper).to receive(:cases) {
         [
-          {
+          double(
             name: 'Joker escape',
-            case_uid: '1002829',
-            handler_email: 'james_gordon@gcpd.com',
+            uid: 'nypd_1002829',
+            officer_email: 'james_gordon@gcpd.com',
+            officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
-            priority: 'low'
-          },
-          {
+            important: false
+          ),
+          double(
             name: 'Joker escape',
-            case_uid: '1002830',
-            handler_email: 'james_gordon@gcpd.com',
+            uid: 'nypd_1002830',
+            officer_email: 'james_gordon@gcpd.com',
+            officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
-            priority: 'medium'
-          },
-          {
+            important: false
+          ),
+          double(
             name: 'Strange does something strange',
-            case_uid: '1009199',
-            handler_email: 'carlos_alvarez@gcpd.com',
+            uid: 'nypd_1009199',
+            officer_email: 'carlos_alvarez@gcpd.com',
+            officer_name: 'Carlos Alvarez',
             description: 'Hugo Strange suspected of strange experiments on sheeps',
-            priority: 'high'
-          }
+            important: true
+          )
         ]
       }
 
@@ -63,20 +66,22 @@ RSpec.describe ImportNypdCases do
 
       allow(NypdWrapper).to receive(:cases) {
         [
-          {
+          double(
             name: 'Joker escape',
-            case_uid: '1002829',
-            handler_email: 'james_gordon',
+            uid: 'nypd_1002829',
+            officer_email: 'james_gordon@gcpd.com',
+            officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
-            priority: 'low'
-          },
-          {
+            important: false
+          ),
+          double(
             name: 'Strange does something strange',
-            case_uid: '1009199',
-            handler_email: 'carlos_alvarez@gcpd.com',
+            uid: 'nypd_1009199',
+            officer_email: 'carlos_alvarez@gcpd.com',
+            officer_name: 'Carlos Alvarez',
             description: 'Hugo Strange suspected of strange experiments on sheeps',
-            priority: 'high'
-          }
+            important: true
+          )
         ]
       }
 
@@ -92,13 +97,14 @@ RSpec.describe ImportNypdCases do
       create(:hero, name: 'Iron Man')
       allow(NypdWrapper).to receive(:cases) {
         [
-          {
+          double(
             name: 'Joker escape',
-            case_uid: '1002829',
-            handler_email: 'james_gordon@gcpd.com',
+            uid: 'nypd_1002829',
+            officer_email: 'james_gordon@gcpd.com',
+            officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
-            priority: 'low'
-          }
+            important: false
+          ),
         ]
       }
 
