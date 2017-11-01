@@ -30,8 +30,13 @@ class ImportCase < Service
   end
 
   def assign_hero
-    _, id = Hero.all.map{|hero| [hero.assigned_cases.count, hero.id] }.sort_by(&:first).first
-    HeroCase.create!(hero_id: id, case_id: case_created.id)
+    hero_with_the_least_cases = Hero.
+      left_outer_joins(:hero_cases).
+      group('heros.id').
+      order('COUNT(hero_cases.id) ASC').
+      first
+
+    hero_with_the_least_cases.assigned_cases << case_created
   end
 
   def send_assignment_notification
