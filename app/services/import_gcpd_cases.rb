@@ -1,6 +1,6 @@
 class ImportGcpdCases
   def self.call
-    GcpdWrapper.get_cases.each do |case_details|
+    GcpdWrapper.cases.each do |case_details|
       # Do not duplicate cases
       new_case = Case.where(case_uid: case_details.uid).first_or_initialize
       next if new_case.persisted?

@@ -2,7 +2,7 @@ RSpec.describe ImportGcpdCases do
   describe '.call' do
     it 'imports new cases idempotently, verifying uniqueness by case uid' do
       create(:hero)
-      allow(GcpdWrapper).to receive(:get_cases) {
+      allow(GcpdWrapper).to receive(:cases) {
         [
           double(
             name: 'Joker escape',
@@ -64,7 +64,7 @@ RSpec.describe ImportGcpdCases do
       create(:hero_case, hero: hulk)
       create(:hero_case, hero: thor)
 
-      allow(GcpdWrapper).to receive(:get_cases) {
+      allow(GcpdWrapper).to receive(:cases) {
         [
           double(
             name: 'Joker escape',
@@ -95,7 +95,7 @@ RSpec.describe ImportGcpdCases do
 
     it 'sends notification to leading officer, whose given case is handled by given hero', type: :mailer do
       create(:hero, name: 'Iron Man')
-      allow(GcpdWrapper).to receive(:get_cases) {
+      allow(GcpdWrapper).to receive(:cases) {
         [
           double(
             name: 'Joker escape',

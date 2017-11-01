@@ -1,5 +1,5 @@
 RSpec.describe GcpdWrapper do
-  describe '.get_cases' do
+  describe '.cases' do
     it 'returns cases information from Gotham City police department' do
       csv = <<~CSV
         #100 Joker,James Gordon,james@gcpd.com,Joker just broke out of prison
@@ -9,7 +9,7 @@ RSpec.describe GcpdWrapper do
       stub_request(:get, 'http://www.gotham-city.dev/gcpd/cases.csv').
         to_return(body: csv)
 
-      result = GcpdWrapper.get_cases
+      result = GcpdWrapper.cases
 
       expect(result).to match([
         have_attributes(
