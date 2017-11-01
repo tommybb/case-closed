@@ -1,9 +1,11 @@
 class ImportGcpdCases < ImportCases
-  def self.wrapper_class
+  private
+
+  def wrapper_class
     GcpdWrapper
   end
 
-  def self.department_code
+  def department_code
     'gcpd'
   end
 end

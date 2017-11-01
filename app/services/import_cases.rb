@@ -1,5 +1,5 @@
-class ImportCases
-  def self.call
+class ImportCases < Service
+  def call
     wrapper_class.cases.each do |case_details|
       unless Case.where(case_uid: case_details.uid).exists?
         case_details = Case.create(
@@ -18,11 +18,13 @@ class ImportCases
     end
   end
 
-  def self.wrapper_class
+  private
+
+  def wrapper_class
     raise NotImplementedError
   end
 
-  def self.department_code
+  def department_code
     raise NotImplementedError
   end
 end

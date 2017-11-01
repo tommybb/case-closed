@@ -1,9 +1,11 @@
 class ImportNypdCases < ImportCases
-  def self.wrapper_class
+  private
+
+  def wrapper_class
     NypdWrapper
   end
 
-  def self.department_code
+  def department_code
     'nypd'
   end
 end
