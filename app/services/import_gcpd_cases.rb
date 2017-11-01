@@ -4,8 +4,4 @@ class ImportGcpdCases < ImportCases
   def wrapper_class
     GcpdWrapper
   end
-
-  def department_code
-    'gcpd'
-  end
 end

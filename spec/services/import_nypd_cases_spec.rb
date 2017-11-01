@@ -7,6 +7,7 @@ RSpec.describe ImportNypdCases do
           double(
             name: 'Joker escape',
             uid: 'nypd_1002829',
+            department_code: 'nypd',
             officer_email: 'james_gordon@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
@@ -15,6 +16,7 @@ RSpec.describe ImportNypdCases do
           double(
             name: 'Joker escape',
             uid: 'nypd_1002830',
+            department_code: 'nypd',
             officer_email: 'james_gordon@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
@@ -23,6 +25,7 @@ RSpec.describe ImportNypdCases do
           double(
             name: 'Strange does something strange',
             uid: 'nypd_1009199',
+            department_code: 'nypd',
             officer_email: 'carlos_alvarez@gcpd.com',
             officer_name: 'Carlos Alvarez',
             description: 'Hugo Strange suspected of strange experiments on sheeps',
@@ -69,6 +72,7 @@ RSpec.describe ImportNypdCases do
           double(
             name: 'Joker escape',
             uid: 'nypd_1002829',
+            department_code: 'nypd',
             officer_email: 'james_gordon@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
@@ -77,6 +81,7 @@ RSpec.describe ImportNypdCases do
           double(
             name: 'Strange does something strange',
             uid: 'nypd_1009199',
+            department_code: 'nypd',
             officer_email: 'carlos_alvarez@gcpd.com',
             officer_name: 'Carlos Alvarez',
             description: 'Hugo Strange suspected of strange experiments on sheeps',
@@ -100,6 +105,7 @@ RSpec.describe ImportNypdCases do
           double(
             name: 'Joker escape',
             uid: 'nypd_1002829',
+            department_code: 'nypd',
             officer_email: 'james_gordon@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',

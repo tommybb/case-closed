@@ -9,6 +9,7 @@ class NypdWrapper
       OpenStruct.new(
         name: row['name'],
         uid: 'nypd_' + row['case_uid'],
+        department_code: 'nypd',
         officer_email: row['handler_email'],
         officer_name: row['handler_email'].
           split('@').

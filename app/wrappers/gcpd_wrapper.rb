@@ -11,6 +11,7 @@ class GcpdWrapper
       OpenStruct.new(
         name: case_name,
         uid: 'gcpd_' + case_uid,
+        department_code: 'gcpd',
         officer_email: row[2],
         officer_name: row[1],
         description: row[3],

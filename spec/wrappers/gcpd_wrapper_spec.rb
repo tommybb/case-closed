@@ -15,6 +15,7 @@ RSpec.describe GcpdWrapper do
         have_attributes(
           name: 'Joker',
           uid: 'gcpd_100',
+          department_code: 'gcpd',
           officer_email: 'james@gcpd.com',
           officer_name: 'James Gordon',
           description: 'Joker just broke out of prison',
@@ -23,6 +24,7 @@ RSpec.describe GcpdWrapper do
         have_attributes(
           name: 'Joker',
           uid: 'gcpd_101',
+          department_code: 'gcpd',
           officer_email: 'james@gcpd.com',
           officer_name: 'James Gordon',
           description: 'Joker just broke out of prison',
@@ -31,6 +33,7 @@ RSpec.describe GcpdWrapper do
         have_attributes(
           name: 'Strange',
           uid: 'gcpd_102',
+          department_code: 'gcpd',
           officer_email: 'carlos@gcpd.com',
           officer_name: 'Carlos Alvarez',
           description: 'Hugo Strange... just wow!',

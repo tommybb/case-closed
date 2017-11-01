@@ -7,6 +7,7 @@ RSpec.describe ImportGcpdCases do
           double(
             name: 'Joker escape',
             uid: 'gcpd_1002829',
+            department_code: 'gcpd',
             officer_email: 'james@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
@@ -15,6 +16,7 @@ RSpec.describe ImportGcpdCases do
           double(
             name: 'Joker escape',
             uid: 'gcpd_1002830',
+            department_code: 'gcpd',
             officer_email: 'james@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
@@ -23,6 +25,7 @@ RSpec.describe ImportGcpdCases do
           double(
             name: 'Strange does something strange',
             uid: 'gcpd_1009199',
+            department_code: 'gcpd',
             officer_email: 'carlos@gcpd.com',
             officer_name: 'Carlos Alvarez',
             description: 'Hugo Strange suspected of strange experiments on sheeps',
@@ -69,6 +72,7 @@ RSpec.describe ImportGcpdCases do
           double(
             name: 'Joker escape',
             uid: 'gcpd_1002829',
+            department_code: 'gcpd',
             officer_email: 'james@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',
@@ -77,6 +81,7 @@ RSpec.describe ImportGcpdCases do
           double(
             name: 'Strange does something strange',
             uid: 'gcpd_1009199',
+            department_code: 'gcpd',
             officer_email: 'carlos@gcpd.com',
             officer_name: 'Carlos Alvarez',
             description: 'Hugo Strange suspected of strange experiments on sheeps',
@@ -100,6 +105,7 @@ RSpec.describe ImportGcpdCases do
           double(
             name: 'Joker escape',
             uid: 'gcpd_1002829',
+            department_code: 'gcpd',
             officer_email: 'james@gcpd.com',
             officer_name: 'James Gordon',
             description: 'Joker just broke out of prison',

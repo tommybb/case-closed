@@ -4,8 +4,4 @@ class ImportNypdCases < ImportCases
   def wrapper_class
     NypdWrapper
   end
-
-  def department_code
-    'nypd'
-  end
 end
