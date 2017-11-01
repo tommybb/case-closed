@@ -4,24 +4,30 @@ RSpec.describe ImportGcpdCases do
       create(:hero)
       allow(GcpdWrapper).to receive(:get_cases) {
         [
-          [
-            '#1002829 Joker escape',
-            'James Gordon',
-            'james@gcpd.com',
-            'Joker just broke out of prison'
-          ],
-          [
-            '#1002830 Joker escape',
-            'James Gordon',
-            'james@gcpd.com',
-            'Joker just broke out of prison'
-          ],
-          [
-            '#1009199 Strange does something strange',
-            'Carlos Alvarez',
-            'carlos@gcpd.com',
-            'Hugo Strange suspected of strange experiments on sheeps'
-          ]
+          double(
+            name: 'Joker escape',
+            uid: 'gcpd_1002829',
+            officer_email: 'james@gcpd.com',
+            officer_name: 'James Gordon',
+            description: 'Joker just broke out of prison',
+            important: false
+          ),
+          double(
+            name: 'Joker escape',
+            uid: 'gcpd_1002830',
+            officer_email: 'james@gcpd.com',
+            officer_name: 'James Gordon',
+            description: 'Joker just broke out of prison',
+            important: false
+          ),
+          double(
+            name: 'Strange does something strange',
+            uid: 'gcpd_1009199',
+            officer_email: 'carlos@gcpd.com',
+            officer_name: 'Carlos Alvarez',
+            description: 'Hugo Strange suspected of strange experiments on sheeps',
+            important: true
+          )
         ]
       }
 
@@ -47,7 +53,7 @@ RSpec.describe ImportGcpdCases do
         officer_name: 'Carlos Alvarez',
         description: 'Hugo Strange suspected of strange experiments on sheeps',
         department_code: 'gcpd',
-        important: false
+        important: true
       )
     end
 
@@ -60,8 +66,22 @@ RSpec.describe ImportGcpdCases do
 
       allow(GcpdWrapper).to receive(:get_cases) {
         [
-          ['#1002829 Joker escape', 'James Gordon', 'james@gcpd.com', 'Joker just broke out of prison'],
-          ['#1009199 Strange does something strange', 'Carlos Alvarez', 'carlos@gcpd.com', 'Hugo Strange suspected of strange experiments on sheeps']
+          double(
+            name: 'Joker escape',
+            uid: 'gcpd_1002829',
+            officer_email: 'james@gcpd.com',
+            officer_name: 'James Gordon',
+            description: 'Joker just broke out of prison',
+            important: false
+          ),
+          double(
+            name: 'Strange does something strange',
+            uid: 'gcpd_1009199',
+            officer_email: 'carlos@gcpd.com',
+            officer_name: 'Carlos Alvarez',
+            description: 'Hugo Strange suspected of strange experiments on sheeps',
+            important: true
+          )
         ]
       }
 
@@ -77,7 +97,14 @@ RSpec.describe ImportGcpdCases do
       create(:hero, name: 'Iron Man')
       allow(GcpdWrapper).to receive(:get_cases) {
         [
-          ['#1002829 Joker escape', 'James Gordon', 'james@gcpd.com', 'Joker just broke out of prison'],
+          double(
+            name: 'Joker escape',
+            uid: 'gcpd_1002829',
+            officer_email: 'james@gcpd.com',
+            officer_name: 'James Gordon',
+            description: 'Joker just broke out of prison',
+            important: false
+          )
         ]
       }
 

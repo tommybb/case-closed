@@ -1,20 +1,17 @@
 class ImportGcpdCases
   def self.call
     GcpdWrapper.get_cases.each do |case_details|
-      case_id = case_details[0].split(' ')[0][1..-1]
-      case_name = case_details[0].split(' ')[1..-1].join(' ')
-
       # Do not duplicate cases
-      new_case = Case.where(case_uid: 'gcpd_' + case_id).first_or_initialize
+      new_case = Case.where(case_uid: case_details.uid).first_or_initialize
       next if new_case.persisted?
 
       # Save case
-      new_case.name = case_name
+      new_case.name = case_details.name
       new_case.department_code = 'gcpd'
-      new_case.officer_email = case_details[2]
-      new_case.officer_name = case_details[1]
-      new_case.description = case_details[3]
-      new_case.important = false
+      new_case.officer_email = case_details.officer_email
+      new_case.officer_name = case_details.officer_name
+      new_case.description = case_details.description
+      new_case.important = case_details.important
       new_case.save
 
 
